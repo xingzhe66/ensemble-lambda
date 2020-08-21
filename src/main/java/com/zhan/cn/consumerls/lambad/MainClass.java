@@ -16,7 +16,8 @@ public class MainClass {
         // 2.有返回值
         HasArgsHasReturn hasReturn = (a, b) -> {
             System.out.println("开始执行");
-            return a + b;
+            return a + b; 
+
         };
         System.out.println(hasReturn.add(12, 12));
 
