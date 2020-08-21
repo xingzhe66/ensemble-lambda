@@ -1,0 +1,23 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: consumer-ls
+  datasource:
+    url: jdbc:mysql://localhost:3306/sql_test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:6789/eureka
+
+# Spring cloud eureka 中默认含有轮询负载均衡策略
+# 但是可以修改负载均衡方式，ribbon是客户端的负载均衡 所以配置在consumer
+provider-ls-a:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+
+
